@@ -15,9 +15,9 @@ async def on_ready():
 ###############SAY###############
 @client.event
 async def on_message(message):
-if message.content.startswith('.say'):
-    elif message.content == '.say':return
-   else:
+        if message.content.startswith('.say'):
+          elif message.content == '.say':return
+         else:
 text = re.findall('.say\s(.*)',message.content)
 refined = ' '.join(text)
 await client.send_message(message.channel, '{0}'.format(refined))
