@@ -16,7 +16,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 if message.content.startswith('.say'):
-    if message.content == '.say':return
+    elif message.content == '.say':return
    else:
 text = re.findall('.say\s(.*)',message.content)
 refined = ' '.join(text)
