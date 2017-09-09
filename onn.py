@@ -99,7 +99,7 @@ Hi Im manage this server
         except Exception as e: print (str(e))
                   
     elif message.content.startswith('.osay'):
-        if message.content == 'h!say':return
+        if message.content == '.osay':return
         else:
             text = re.findall('.osay\s(.*)',message.content)
             refined = ' '.join(text)
