@@ -14,6 +14,7 @@ async def on_ready():
     
 ###############SAY###############
 @client.event
+async def on_message(message):
 if message.content.startswith('o!say'):
         if message.content == 'o!say':return
         else:
@@ -64,7 +65,7 @@ async def on_member_remove(member):
 @client.event
 async def on_member_ban(member):
     server = member.server
-    fmt = '{0.member} has been banned lmao'
+    fmt = '{0.member} has been banned'
     await client.send_message(server, fmt.format(member, server))
     
     print('Starting....')
