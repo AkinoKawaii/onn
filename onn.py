@@ -147,12 +147,12 @@ async def on_member_update(before, after):
 @client.event
 async def on_member_remove(member):
     server = member.server
-    fmt = '{0.mention} leave the {1.name} server'
+    fmt = 'someone leave the {1.name} server'
     await client.send_message(server, fmt.format(member, server))
 @client.event
 async def on_member_join(member):
     server = member.server
-    fmt = 'Welcome {0.mention} to {1.name}!'
+    fmt = 'Hi {0.mention} welcome to {1.name}!:smile:'
     await client.send_message(server, fmt.format(member, server))
     
     print('Starting....')
