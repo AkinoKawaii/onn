@@ -123,33 +123,31 @@ async def on_member_update(before, after):
         server = after.server
         member = after
         if before.name != after.name:
-            fmt = ':warning: `{0.name}` *changed their name to* `{1.name}`'
+            fmt = ':pushpin: `{0.name}` *changed name to* `{1.name}`'
             await client.send_message(after.server, fmt.format(before, after))
         if before.nick != after.nick:
-            fmt = ':warning: `{0.nick}` *changed their nick to* `{1.nick}`'
+            fmt = ':pushpin: `{0.nick}` *changed nick to* `{1.nick}`'
             await client.send_message(after.server, fmt.format(before, after))
             if len(before.roles) > len(after.roles):
                 for role in before.roles:
                     if role not in after.roles:
-                        embed = discord.Embed(description='{0.display_name} ({0.id}) lost the {1.name} role'.format(before, role))
-                        embed.set_author(name='Role removed', icon_url=member.avatar_url)
-                        await client.send_message(after.server, embed=embed)
+                        fmt =':warning: `{0.display_name}` *lost the* `{1.name` *role* :warning:'
+                        await client.send_message(after.server, fmt.format(before, role)
             elif len(before.roles) < len(after.roles):
                 for role in after.roles:
                     if role not in before.roles:
-                        embed = discord.Embed(description='{0.display_name} ({0.id}) got the {1.name} role'.format(before, role))
-                        embed.set_author(name='Role applied', icon_url=member.avatar_url)
-                        await client.send_message(after.server, embed=embed)
+                         fmt =':warning: `{0.display_name}` *got the* `{1.name}` *role* :warning:'
+                        await client.send_message(after.server, fmt.format(before, role)
                         
 @client.event
 async def on_member_remove(member):
     server = member.server
-    fmt = 'someone leave the {1.name} server'
+    fmt = ':fire: someone leave the {1.name} server'
     await client.send_message(server, fmt.format(member, server))
 @client.event
 async def on_member_join(member):
     server = member.server
-    fmt = 'Hi {0.mention} welcome to {1.name}!:smile:'
+    fmt = 'Hi {0.mention} welcome to {1.name} have fun with us!:smile::v:'
     await client.send_message(server, fmt.format(member, server))
     
     print('Starting....')
