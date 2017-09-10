@@ -137,7 +137,7 @@ async def on_member_update(before, after):
                 for role in after.roles:
                     if role not in before.roles:
                          fmt =':warning: `{0.display_name}` *got the* `{1.name}` *role* :warning:'
-                        await client.send_message(after.server, fmt.format(after, role))
+                         await client.send_message(after.server, fmt.format(before, role))
                         
 @client.event
 async def on_member_remove(member):
