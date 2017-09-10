@@ -117,6 +117,8 @@ Official bot from OS by Akino
             text = re.findall('!say\s(.*)',message.content)
             refined = ' '.join(text)
             await client.send_message(message.channel, '{0}'.format(refined))
+            
+#######################################after-before#######################################
     
 @client.event
 async def on_member_update(before, after):
@@ -149,6 +151,14 @@ async def on_member_join(member):
     server = member.server
     fmt = 'Hi {0.mention} welcome to {1.name} have fun with us!:smile::v:'
     await client.send_message(server, fmt.format(member, server))
+    
+###################################Delete message###################################
+@client.event
+async def on_message(message):
+    if message.content.startswith('!clear'):
+        tmp = await client.send_message(message.channel, 'Clearing messages...')
+        async for msg in client.logs_from(message.channel):
+            await client.delete_message(msg)
     
     print('Starting....')
 client.run('MzU1OTI5NDc4NTI3OTc1NDQ1.DJT83w.jKKQEydYZs9x0d9xOmhJeCtSRT8')
