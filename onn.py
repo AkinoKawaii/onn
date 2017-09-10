@@ -126,7 +126,7 @@ async def on_member_update(before, after):
             fmt = ':warning: `{0.name}` *changed their name to* `{1.name}`'
             await client.send_message(after.server, fmt.format(before, after))
         if before.nick != after.nick:
-            fmt = icon_url=member.avatar_url':warning: `{0.nick}` *changed their nick to* `{1.nick}`'
+            fmt = ':warning: `{0.nick}` *changed their nick to* `{1.nick}`'
             await client.send_message(after.server, fmt.format(before, after))
             if len(before.roles) > len(after.roles):
                 for role in before.roles:
