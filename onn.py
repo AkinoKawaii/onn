@@ -123,12 +123,11 @@ async def on_member_update(before, after):
         server = after.server
         member = after
         if before.name != after.name:
-            embed = discord.Embed(description='From {0.name} ({0.id}) to {1.name}'.format(before, after))
-            embed.set_author( name='Name Changed', icon_url=member.avatar_url)
-            await client.send_message(after.server, embed=embed)
+            fmt = ':warning: From {0.name} to :white_check_mark: {1.name}'
+            await client.send_message(after.server, fmt.format(before, after))
         if before.nick != after.nick:
             embed = discord.Embed(description='From {0.nick} ({0.id}) to {1.nick}'.format(before, after))
-            embed.set_author( name='Name Changed', icon_url=member.avatar_url)
+            embed.set_author( name='Nick Changed', icon_url=member.avatar_url)
             await client.send_message(after.server, embed=embed)
         if before.roles != after.roles:
             if len(before.roles) > len(after.roles):
