@@ -39,7 +39,7 @@ Official bot from OS by Akino
         try:
             if message.channel.id !='274387797140570112':
                 coloursman = int(random_color['color'])
-                if message.content == 'h!user':
+                if message.content == 'o!stat':
                     discord.Member = None
                     author = message.author
                     if not discord.Member :
