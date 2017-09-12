@@ -3,7 +3,6 @@ import asyncio
 import re
 import random
 client = discord.Client()
-client = discord.Client()
 def colors():
     list_colors = [{'color':"16777215"},{'color':"16711680"},{'color':"0"},{'color':"255"},{'color':"8388736"},{'color':"65535"},{'color':"8421504"},{'color':"8421504"},{'color':"10040319"}]
     random_color = random.choice(list_colors)
@@ -25,7 +24,8 @@ async def on_ready():
     print(client.user.id)
     print('------')
     await client.change_presence( game=discord.Game( name="Onika Studio", type = 1))
-@client.event
+
+    @client.event
 async def on_message(message):
     random_color = colors()
  #   if message.content.startswith('=ok'):
