@@ -25,7 +25,7 @@ async def on_ready():
     print('------')
     await client.change_presence( game=discord.Game( name="Onika Studio", type = 1))
 
-    @client.event
+@client.event
 async def on_message(message):
     random_color = colors()
  #   if message.content.startswith('=ok'):
