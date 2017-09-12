@@ -30,7 +30,7 @@ async def on_message(message):
     random_color = colors()
  #   if message.content.startswith('=ok'):
      #   await client.send_message(message.channel,'ok')
-        if message.content.startswith('o!stat'):
+    if message.content.startswith('o!stat'):
         try:
             if message.channel.id !='274387797140570112':
                 coloursman = int(random_color['color'])
