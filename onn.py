@@ -30,11 +30,7 @@ async def on_message(message):
     random_color = colors()
  #   if message.content.startswith('=ok'):
      #   await client.send_message(message.channel,'ok')
-    if message.content.startswith('order'):
-        await client.send_message(message.channel,"""```         
-Official bot from OS by Akino
-```""")  
-    elif message.content.startswith('o!stat'):
+     if message.content.startswith('o!stat'):
         try:
             if message.channel.id !='274387797140570112':
                 coloursman = int(random_color['color'])
@@ -107,10 +103,10 @@ Official bot from OS by Akino
   
         except Exception as e: print (str(e))
                   
-    elif message.content.startswith('!say'):
-        if message.content == '!say':return
+    elif message.content.startswith('.say'):
+        if message.content == '.say':return
         else:
-            text = re.findall('!say\s(.*)',message.content)
+            text = re.findall('.say\s(.*)',message.content)
             refined = ' '.join(text)
             await client.send_message(message.channel, '{0}'.format(refined))
             
