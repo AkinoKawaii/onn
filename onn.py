@@ -2,7 +2,6 @@ import discord
 import asyncio
 import re
 import random
-import talking
 client = discord.Client()
 def colors():
     list_colors = [{'color':"16777215"},{'color':"16711680"},{'color':"0"},{'color':"255"},{'color':"8388736"},{'color':"65535"},{'color':"8421504"},{'color':"8421504"},{'color':"10040319"}]
@@ -34,8 +33,7 @@ async def on_message(message):
     if message.content.startswith('order'):
         await client.send_message(message.channel,"""```         
 Official bot from OS by Akino
-```""")
-      
+```""")  
     elif message.content.startswith('o!stat'):
         try:
             if message.channel.id !='274387797140570112':
@@ -71,9 +69,7 @@ Official bot from OS by Akino
                     user_em.color=coloursman
                 
                     await client.send_message(message.channel,embed = user_em)          
-           
-           
-           
+          
                 else:
                     check_tagger = re.findall('o!stat\s(.*)',message.content)
         
@@ -110,7 +106,6 @@ Official bot from OS by Akino
                     await client.send_message(message.channel,embed = user_em)
   
         except Exception as e: print (str(e))
-    
                   
     elif message.content.startswith('!say'):
         if message.content == '!say':return
